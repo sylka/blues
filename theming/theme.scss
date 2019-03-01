@@ -1,0 +1,5 @@
+$blues-primary: mat-palette($blues-primary-blue);
+$blues-accent:  mat-palette($blues-ultra-light, 500, 100, 700);
+$blues-warn: mat-palette($mat-red);
+
+$blues-app-theme: mat-light-theme($blues-primary, $blues-accent, $blues-warn);

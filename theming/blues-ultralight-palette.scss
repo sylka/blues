@@ -1,0 +1,32 @@
+$blues-ultra-light: (
+    50 : #f7fafb,
+    100 : #ecf3f4,
+    200 : #dfebed,
+    300 : #d2e2e6,
+    400 : #c8dce0,
+    500 : #bed6db, // primary ultra light
+    600 : #b8d1d7,
+    700 : #afccd2,
+    800 : #a7c6cd,
+    900 : #99bcc4,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #feffff,
+    A700 : #e5faff,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: white,
+        A400: white,
+        A700: white,
+    )
+);
