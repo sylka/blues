@@ -1,5 +1,532 @@
+@import './blues-primary-palette';
+@import './blues-ultralight-palette';
+
 $blues-primary: mat-palette($blues-primary-blue);
 $blues-accent:  mat-palette($blues-ultra-light, 500, 100, 700);
 $blues-warn: mat-palette($mat-red);
 
 $blues-app-theme: mat-light-theme($blues-primary, $blues-accent, $blues-warn);
+@include angular-material-theme($blues-app-theme);
+
+// type configurations
+$type-config: mat-typography-config();
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 500;
+$body-font-size: 1rem;
+$body-sm-font-size: .8rem;
+$body-letter-spacing: .03rem;
+$nav-letter-spacing: .06rem;
+
+$blues-blue: (
+    bluesTableAltBg: #e5eef1, //light blue gray
+    bluesUltraLtBlue: #bed6db, //ultra light blue
+    mdBlue: #d1e2e7, //row hover
+    bluesPrimaryBlue: #0099cc, //primary blue
+    bluesDkBlue: #003359, //dark blue
+);
+
+$blues-gray: (
+    white: #ffffff, //white
+    ltGray: #eeeeee, //light gray
+    bluesLtGray: #cccccc,
+    bluesMdGray: #7e7e7e, //medium gray
+    bluesDkGray: #454545, //dark gray
+);
+
+$error: (
+    ltPink: #dcaeae,
+    dkPink: #bc9696,
+    warn: #f44336,
+    dkRed: #aa272f
+);
+
+$success: (
+    ltGreen: #8fc68b,
+    dkGreen: #88a585
+);
+
+// headers, paragraph, etc
+h1, h2 {
+    color: map-get($blues-blue, bluesDkBlue);
+    font-weight: $font-weight-regular;
+    font-family: mat-font-family($type-config);
+    margin: 0 0 8px;
+}
+
+h3 {
+    color: map-get($blues-blue, bluesDkBlue);
+    font-weight: $font-weight-bold; 
+    font-family: mat-font-family($type-config);
+    margin: 10px 0 10px 0;
+    font-size: .8rem;
+}
+
+h4 {
+    color: map-get($blues-blue, bluesPrimaryBlue);
+    font-family: mat-font-family($type-config);
+    font-weight: $font-weight-bold;
+    font-size: $body-sm-font-size;
+}
+
+p {
+    color: map-get($blues-gray, bluesDkGray);
+    font-family: mat-font-family($type-config);
+    font-size: $body-sm-font-size;
+}
+
+a {
+    color: map-get($blues-blue, bluesPrimaryBlue);
+    font-family: mat-font-family($type-config);
+    text-decoration: none;
+    text-decoration-line: none;
+    font-weight: $font-weight-bold;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.back-link {
+    cursor: pointer;
+    color: map-get($blues-blue, bluesPrimaryBlue);
+
+    .mat-icon {
+        vertical-align: bottom;
+        height: 18px;
+        width: 18px;
+        padding-right: 5px;
+    }
+
+    h4 {
+        margin: 0px;
+        display: inline-block;
+    }
+
+    h4:hover {
+        text-decoration: underline;
+    }
+}
+
+.material-icons {
+    font-size: 18px;
+}
+
+// padding, margin, widths, etc
+.padding {
+    padding: 20px;
+}
+
+.padding-top {
+    padding-top: 15px;
+}
+
+.padding-right {
+    padding-right: 15px;
+}
+
+.padding-top-20 {
+    padding-top: 20px;
+}
+
+.padding-bottom {
+    padding-bottom: 15px;
+}
+
+.padding-left {
+    padding-left: 15px;
+}
+
+.padding-left-10 {
+    padding-left: 10px;
+}
+
+.padding-right-10 {
+    padding-right: 10px;
+}
+
+.padding-left-30 {
+    padding-left: 30px;
+}
+
+.padding-bottom-30 {
+    padding-bottom: 30px;
+}
+
+.margin-right, .dialog-buttons .margin-right {
+    margin-right: 15px;
+}
+
+.margin-left, .dialog-buttons .margin-left {
+    margin-left: 15px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.fill-height {
+    height: -webkit-fill-available;
+}
+
+.height-600 {
+    height: 600px;
+}
+
+// menu
+.menu-container {
+    width: 70px;
+    
+    .mat-icon-button { 
+        height: 91px;
+        width: 75px; 
+        background-color: transparent;
+
+        .mat-button-wrapper {
+            height: 50px;
+            width: 50px;
+        }
+
+        .mat-icon.close {
+            font-size: 50px;
+            height: 30px;
+            width: 50px;
+            color: map-get($blues-gray, white);
+        }
+
+        .mat-icon.open {
+            font-size: 50px;
+            height: 30px;
+            width: 50px;
+            color: map-get($blues-blue, bluesPrimaryBlue);
+        }
+
+        p.close {
+            margin: 0px;
+            color: white;
+            font-weight: $font-weight-light;
+            line-height: 20px;
+        }
+
+        p.open {
+            margin: 0px;
+            color: map-get($blues-blue, bluesPrimaryBlue);
+            font-weight: $font-weight-regular;
+            line-height: 20px;
+        }
+    }
+}
+
+.menu-container.close {
+    background-color: #012743;
+}
+
+.menu-container.open {
+    background-color: map-get($blues-gray, ltGray);
+}
+
+.menu-container {
+    float: left;
+}
+
+// header
+.header {
+    display: flex;
+}
+
+.header-container {
+    flex-grow: 1;
+    background-color: map-get($blues-blue, bluesDkBlue);
+}
+
+.header-logo {
+    padding: 0 0 0 20px;
+    background-color: map-get($blues-blue, bluesDkBlue);
+    float: left;
+    width: 250px;
+
+    h1 {
+        color: white;
+    }
+    p {
+        color: white;
+        float: right;
+        margin: 0;
+        padding-right: 15px;
+    }
+    .nav-user p {
+        padding-right: 10px;
+        margin-bottom: 0px;
+
+        a {
+            color: white;
+            cursor: pointer;
+            padding-left: 5px;
+        }
+    }
+}
+
+.header-login {
+    background-color: map-get($blues-blue, bluesDkBlue);
+    right: 10px;
+    position: absolute;
+
+    a {
+        color: white;
+        display: inline-block;
+        font-weight: normal;
+    }
+}
+.mat-drawer.custom-drawer {
+    border-right: none;
+    background-color: transparent;
+    min-width: 225px;
+}
+
+.mat-drawer:not(.mat-drawer-side) {
+    box-shadow: none;
+}
+
+.mat-drawer-inner-container {
+    overflow: hidden!important;
+}
+
+.mat-sidenav-container .mat-drawer-backdrop {
+    margin-left: 75px; // hacky
+}
+
+.mat-list-item {
+    border-bottom: 1px solid #cccccc;
+
+    .mat-icon {
+        font-size: 26px;
+        vertical-align: bottom;
+    }
+
+    a {
+        color: map-get($blues-blue, bluesDkBlue);
+        font-weight: 400;
+        letter-spacing: .05em;
+    }
+}
+
+.mat-nav-list {
+    
+    a {
+        color: map-get($blues-blue, bluesDkBlue);
+        font-weight: 400;
+        letter-spacing: .05em;
+    }
+
+    a.active {
+        font-weight: 500;
+        color: map-get($blues-blue, bluesPrimaryBlue);
+    }
+}
+
+.mat-list-item.has-flex .mat-list-item-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+    position: relative;
+    height: inherit;
+}
+
+.mat-list-base .mat-list-item.has-block .mat-list-item-content {
+    display: block;
+    padding: 0px;
+    // flex-direction: row;
+
+    .mat-expansion-panel-body {
+        padding: 0px;
+    }
+
+    .mat-accordion .mat-expansion-panel:last-of-type, .mat-accordion .mat-expansion-panel:first-of-type {
+        border-radius: 0px;
+    }
+
+    .mat-expansion-panel:not([class*='mat-elevation-z']) {
+        box-shadow: none;
+    }
+
+    .mat-expansion-panel {
+        background-color: map-get($blues-gray, ltGray);
+    }
+
+    .mat-expansion-panel-header {
+        padding: 0 16px;
+    }
+
+    .mat-expansion-panel-header.mat-expanded {
+        border-bottom: 1px solid map-get($blues-gray, bluesLtGray);
+    }
+
+    .mat-expansion-panel-header.mat-expanded .mat-expansion-panel-header-title {
+        font-weight: $font-weight-bold;
+    }
+    .mat-expansion-panel-header-title {
+        font-size: 16px;
+        color: map-get($blues-blue, bluesDkBlue);
+        letter-spacing: 0.8px;
+    }
+
+    .nav-links {
+        padding: 16px;
+        border-bottom: 1px solid map-get($blues-gray, bluesLtGray);
+        background-color: white;
+        transition: 0.3s;
+    }
+
+    .nav-links:hover {
+        background-color: map-get($blues-gray, ltGray);
+    }
+}
+
+.menu-container.in-menu {
+    float: none;
+    height: 91px;
+    width: 100%;
+
+    .mat-icon-button { 
+        background-color: map-get($blues-gray, ltGray);
+        border-radius: 0%;
+    }
+}
+
+.nav-links-container {
+    background-color: map-get($blues-gray, ltGray);
+    height: -webkit-fill-available; 
+}
+
+// form classes
+.custom-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.mat-form-field-infix {
+    color: map-get($blues-blue, bluesPrimaryBlue);
+    font-weight: $font-weight-bold;
+    font-size: $body-sm-font-size;
+    line-height: 16px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: map-get($blues-blue, bluesPrimaryBlue);
+}
+
+// button
+button.mat-flat-button, button.mat-raised-button {
+    border-radius: 0;
+    font-size: $body-sm-font-size;
+    line-height: 32px;
+}
+
+// error message
+.error {
+    text-align: center;
+    font-weight: $font-weight-bold;
+    width: 70%;
+    margin: 0 auto;
+
+    p {
+        background-color: map-get($error, ltPink);
+        border: 1px solid map-get($error, dkPink);
+        padding: 15px;
+        margin: 0 0 16px 0;
+    }
+
+    .mat-icon {
+        float: right;
+        cursor: pointer;
+    }
+}
+
+// success message
+.success {
+    text-align: center;
+    font-weight: $font-weight-bold;
+    width: 70%;
+    margin: 0 auto;
+
+    p {
+        background-color: map-get($success, ltGreen);
+        border: 1px solid map-get($success, dkGreen);
+        padding: 15px;
+        margin: 0 0 16px 0;
+    }
+
+    .mat-icon {
+        float: right;
+        cursor: pointer;
+    }
+}
+
+// login component
+.login-container {
+    padding: 15px 0 0 0;
+    margin: auto;
+    width: 500px;
+}
+
+// table
+.table-container {
+    overflow: auto;
+}
+
+.blues-table  {
+    border: solid 1px map-get($blues-blue, bluesUltraLtBlue);
+    width: 100%;
+    position: relative;
+
+    td.mat-cell:first-child {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    td.mat-cell:first-child, 
+    td.mat-footer-cell:first-child,
+    th.mat-header-cell:first-child {
+        padding-left: 15px;
+    }
+
+    tr.mat-header-row {
+        background-color: map-get($blues-blue, bluesUltraLtBlue);
+        height: 40px;
+    } 
+
+    .mat-header-cell {
+        color: map-get($blues-blue, bluesDkBlue);
+        font-size: .8rem;
+    }
+
+    tr.mat-row.blues-row { 
+        background-color: map-get($blues-blue, bluesTableAltBg);
+        border-bottom-color: map-get($blues-blue, bluesUltraLtBlue);
+        transition: 0.3s;
+    }
+
+    tr.mat-row.blues-row:hover {
+        background: map-get($blues-blue, mdBlue);
+    }
+
+    tr.mat-row.blues-row:active {
+        background: #efefef;
+    }
+}
+// footer
+.footer {
+    height: 70px;
+    background-color: map-get($blues-blue, bluesDkBlue);
+    margin-top: 20px;
+
+    p {
+        color: white;
+        margin: 0px;
+        font-size: $body-sm-font-size;
+    }
+}
