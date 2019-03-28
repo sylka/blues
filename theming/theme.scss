@@ -340,6 +340,23 @@ a:hover {
     padding: 0px;
     // flex-direction: row;
 
+    
+
+
+}
+.mat-nav-list {
+    .nav-links {
+        padding: 16px;
+        border-bottom: 1px solid map-get($blues-gray, bluesLtGray);
+        background-color: white;
+        transition: 0.3s;
+        font-size: 16px;
+    }
+    
+    .nav-links:hover {
+        background-color: map-get($blues-gray, ltGray);
+    }
+
     .mat-expansion-panel-body {
         padding: 0px;
     }
@@ -354,6 +371,10 @@ a:hover {
 
     .mat-expansion-panel {
         background-color: map-get($blues-gray, ltGray);
+    }
+
+    .mat-expansion-panel.border-bottom {
+        border-bottom: 1px solid map-get($blues-gray, bluesLtGray);
     }
 
     .mat-expansion-panel-header {
@@ -372,18 +393,8 @@ a:hover {
         color: map-get($blues-blue, bluesDkBlue);
         letter-spacing: 0.8px;
     }
-
-    .nav-links {
-        padding: 16px;
-        border-bottom: 1px solid map-get($blues-gray, bluesLtGray);
-        background-color: white;
-        transition: 0.3s;
-    }
-
-    .nav-links:hover {
-        background-color: map-get($blues-gray, ltGray);
-    }
 }
+
 
 .menu-container.in-menu {
     float: none;
