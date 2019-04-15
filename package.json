@@ -1,14 +1,25 @@
 {
-    "name": "@jsylka/blues",
-    "version": "1.0.44",
-    "description": "Creates blues theme and makes blues sass variables available",
-    "license": "MIT",
-    "repository": "jsylka/blues",
-    "main": "index.js",
-    "keywords": [
-      "blues",
-      "npm",
-      "package",
-      "jsylka"
-    ]
+  "name": "@jsylka/blues",
+  "version": "1.0.45",
+  "description": "Creates blues theme and makes blues sass variables available",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsylka/blues.git"
+  },
+  "main": "index.js",
+  "keywords": [
+    "blues",
+    "npm",
+    "package",
+    "jsylka"
+  ],
+  "bugs": {
+    "url": "https://github.com/jsylka/blues/issues"
+  },
+  "homepage": "https://github.com/jsylka/blues#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jsylka"
 }
