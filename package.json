@@ -1,0 +1,14 @@
+{
+    "name": "@jsylka/blues",
+    "version": "1.0.44",
+    "description": "Creates blues theme and makes blues sass variables available",
+    "license": "MIT",
+    "repository": "jsylka/blues",
+    "main": "index.js",
+    "keywords": [
+      "blues",
+      "npm",
+      "package",
+      "jsylka"
+    ]
+}
